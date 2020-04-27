@@ -29,5 +29,5 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 
 func AASAHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
-	fmt.Fprintf(w, `{"applinks":{"apps":[],"details":[{"appID":"285W24646W.com.akvelonadjust.examples.com","paths":["/*"]}]}}`)
+	fmt.Fprintf(w, `{"applinks":{"apps":[],"details":[{"appID":"285W24646W.com.akvelon.adjust","paths":["/*"]}]}}`)
 }
