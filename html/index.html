@@ -35,7 +35,7 @@
         <script>
             const adjustUrl = getParameterByName("adjust_url")
             if (adjustUrl && adjustUrl != "") {
-                window.location.href = encodeURIComponent(adjustUrl);
+                window.location.href = adjustUrl;
             }
 
             function getParameterByName(name, url) {
