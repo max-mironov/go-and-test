@@ -29,6 +29,7 @@ func HomeHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func AppLinksHandler(w http.ResponseWriter, r *http.Request) {
+	r.Header.Set("Prefer-Html-Meta-Tags", "al")
 	w.WriteHeader(http.StatusOK)
 	http.ServeFile(w, r, "html/applink.html")
 }
