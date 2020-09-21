@@ -19,12 +19,18 @@ func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", HomeHandler)
 	r.HandleFunc("/apple-app-site-association", AASAHandler)
+	r.HandleFunc("/applinks", AppLinksHandler)
 	log.Fatal(http.ListenAndServe(":"+port, r))
 }
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	http.ServeFile(w, r, "html/index.html")
+}
+
+func AppLinksHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	http.ServeFile(w, r, "html/applink.html")
 }
 
 func AASAHandler(w http.ResponseWriter, r *http.Request) {
