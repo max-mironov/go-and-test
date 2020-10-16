@@ -20,6 +20,7 @@ func main() {
 	r.HandleFunc("/", HomeHandler)
 	r.HandleFunc("/apple-app-site-association", AASAHandler)
 	r.HandleFunc("/applinks", AppLinksHandler)
+	r.HandleFunc("/fbtest", FBMessengerHandler)
 	log.Fatal(http.ListenAndServe(":"+port, r))
 }
 
@@ -32,6 +33,12 @@ func AppLinksHandler(w http.ResponseWriter, r *http.Request) {
 	r.Header.Set("Prefer-Html-Meta-Tags", "al")
 	w.WriteHeader(http.StatusOK)
 	http.ServeFile(w, r, "html/applink.html")
+}
+
+func FBMessengerHandler(w http.ResponseWriter, r *http.Request) {
+	r.Header.Set("Prefer-Html-Meta-Tags", "al")
+	w.WriteHeader(http.StatusOK)
+	http.ServeFile(w, r, "html/fbtest.html")
 }
 
 func AASAHandler(w http.ResponseWriter, r *http.Request) {
